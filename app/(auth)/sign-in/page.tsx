@@ -3,7 +3,7 @@ import React from 'react'
 const Page = () => {
   return (
     <div>
-      <h1>Welcome to my SAAS App</h1>
+      Sign in page
     </div>
   )
 }
