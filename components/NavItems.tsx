@@ -25,12 +25,12 @@ const NavItems = () => {
     const pathname = usePathname();
   return (
     <div>
-       <div className="flex space-x-4">
+       <div className="flex space-x-9">
          {links.map(({name,href})=> (
             <Link 
             key={name} 
             href={href}
-            className={cn( pathname === href && "text-primary font-semibold") + "text-[15px]" }
+            className={cn( pathname === href && "text-[#FE5933] font-semibold") + "text-[15px]" }
             >
                 {name}
             </Link>
