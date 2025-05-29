@@ -27,6 +27,7 @@ import { Input } from "@/components/ui/input"
 import { subjects } from "@/constants"
 import { createCompanion } from "@/lib/actions/companion.action"
 import { redirect } from "next/navigation"
+import { useState } from "react"
  
 const formSchema = z.object({
   name: z.string().min(2, "Companion is required"),
@@ -40,6 +41,7 @@ const formSchema = z.object({
 
 
 const CompanionForm = () => {
+  const [submitting,setSubmitting] = useState(false)
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -56,6 +58,7 @@ const CompanionForm = () => {
  
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setSubmitting(true)
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     // console.log(values)
@@ -217,7 +220,9 @@ const CompanionForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full rounded-xl cursor-pointer bg-[#FE5933]">Build a companion</Button>
+        <Button type="submit" className="w-full rounded-xl cursor-pointer bg-[#FE5933]" disabled={submitting}>
+  {submitting ? "Building your companion ..." : "Build a companion"}
+</Button>
       </form>
     </Form>
     </>

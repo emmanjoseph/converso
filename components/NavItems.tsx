@@ -10,7 +10,7 @@ const links = [
         href:"/"
     },
     {
-        name:"Companions",
+        name:"Learning companions",
         href:"/companions"
     },
     {

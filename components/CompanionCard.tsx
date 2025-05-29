@@ -27,7 +27,7 @@ const CompanionCard = ({id,name,topic,subject,duration,color}:CompanionCardProps
 
         {/* middle */}
         <h2 className="text-lg font-bold">{name}</h2>
-        <p className="text-sm"><span className="font-medium">Topic: </span>{topic}</p>
+        <p className="text-sm max-w-[290px]"><span className="font-medium">Topic: </span>{topic}</p>
 
         <div className="flex items-center gap-2">
             <Image src={"/icons/clock.svg"} alt='clock' width={12} height={12}/>
@@ -35,7 +35,7 @@ const CompanionCard = ({id,name,topic,subject,duration,color}:CompanionCardProps
         </div>
 
         <Link href={`/companions/${id}`} className='w-full'>
-           <Button className='w-full btn-primary bg-[#FE5933] rounded-xl h-12'>
+           <Button className='w-full btn-primary bg-[#FE5933] rounded-xl h-12 font-medium'>
              Launch Lesson
            </Button>
         </Link>
